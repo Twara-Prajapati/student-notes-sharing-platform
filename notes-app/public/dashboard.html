@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browse Notes — NoteVault</title>
+  <link rel="stylesheet" href="theme.css" />
+</head>
+<body>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo"><div class="logo-mark">📚</div>NoteVault</a>
+  <div class="nav-links">
+    <a href="dashboard.html" class="nav-active">Browse</a>
+    <a href="upload.html" id="nav-upload" style="display:none">Upload</a>
+    <a href="#" id="nav-logout" onclick="logout()" style="display:none">Sign out</a>
+    <a href="login.html" id="nav-login" class="btn-ng">Sign In</a>
+    <a href="register.html" id="nav-register" class="btn-np">Register →</a>
+  </div>
+</nav>
+
+<div class="dash-hero">
+  <div class="dash-hero-inner">
+    <h2>Browse <span>Notes</span></h2>
+    <div class="search-row">
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input class="search-input" id="searchInput" type="text" placeholder="Search by subject or title…" autocomplete="off" />
+      </div>
+      <button class="btn-search" onclick="doSearch()">Search</button>
+    </div>
+  </div>
+</div>
+
+<div class="filter-bar">
+  <span class="filter-label">Filter:</span>
+  <button class="chip active" data-subject="" onclick="filterChip(this,'')">All</button>
+  <button class="chip" data-subject="Mathematics" onclick="filterChip(this,'Mathematics')">Mathematics</button>
+  <button class="chip" data-subject="Physics" onclick="filterChip(this,'Physics')">Physics</button>
+  <button class="chip" data-subject="Chemistry" onclick="filterChip(this,'Chemistry')">Chemistry</button>
+  <button class="chip" data-subject="Biology" onclick="filterChip(this,'Biology')">Biology</button>
+  <button class="chip" data-subject="Computer Science" onclick="filterChip(this,'Computer Science')">Computer Science</button>
+  <button class="chip" data-subject="History" onclick="filterChip(this,'History')">History</button>
+  <button class="chip" data-subject="Economics" onclick="filterChip(this,'Economics')">Economics</button>
+  <button class="chip" data-subject="English" onclick="filterChip(this,'English')">English</button>
+</div>
+
+<div class="dash-main">
+  <div class="results-header">
+    <h3 class="results-title" id="resultsTitle">All Notes</h3>
+    <span class="results-count" id="resultsCount">Loading…</span>
+  </div>
+  <div class="notes-grid" id="notesGrid"></div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
